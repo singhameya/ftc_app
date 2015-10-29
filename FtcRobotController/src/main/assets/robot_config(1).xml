@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<Robot>
+    <LegacyModuleController name="Legacy Module 1" serialNumber="AL00VDU8">
+        <MotorController name="Attachment_Motors" port="0">
+            <MOTOR name="NO DEVICE ATTACHED" port="1" />
+            <MOTOR name="NO DEVICE ATTACHED" port="2" />
+        </MotorController>
+        <MotorController name="Left_Drive" port="2">
+            <MOTOR name="Left_Front" port="2" />
+            <MOTOR name="Left_Back" port="1" />
+        </MotorController>
+        <MotorController name="Right_Drive" port="5">
+            <MOTOR name="Right_Front" port="2" />
+            <MOTOR name="Right_Back" port="1" />
+        </MotorController>
+        <ServoController name="Servo" port="3">
+            <SERVO name="NO DEVICE ATTACHED" port="1" />
+            <SERVO name="NO DEVICE ATTACHED" port="2" />
+            <SERVO name="NO DEVICE ATTACHED" port="3" />
+            <SERVO name="NO DEVICE ATTACHED" port="4" />
+            <SERVO name="NO DEVICE ATTACHED" port="5" />
+            <SERVO name="NO DEVICE ATTACHED" port="6" />
+        </ServoController>
+    </LegacyModuleController>
+</Robot>

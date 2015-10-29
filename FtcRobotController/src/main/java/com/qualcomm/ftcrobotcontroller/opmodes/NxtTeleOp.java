@@ -31,17 +31,13 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
-import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import  com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorController;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.Range;
 
-/**
- * TeleOp Mode
- * <p>
- * Enables control of the robot via the gamepad
- */
+
 public class NxtTeleOp extends OpMode {
 
   // position of the claw servo
@@ -179,7 +175,7 @@ public class NxtTeleOp extends OpMode {
 
       // we only want to process gamepad2 if someone is using one of it's analog inputs. If you always
       // want to process gamepad2, remove this check
-      if (gamepad2.atRest() == false) {
+      if (!gamepad2.atRest()) {
 
         // throttle is taken directly from the right trigger, the right trigger ranges in values from
         // 0 to 1

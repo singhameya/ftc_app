@@ -3,7 +3,6 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorController;
-import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.Range;
 
 /**
@@ -12,29 +11,43 @@ import com.qualcomm.robotcore.util.Range;
 public class RobotDrive8481 extends OpMode
 
 {
-    DcMotor motorRightFront;
-    DcMotor motorRightBack;
-    DcMotor motorLeftFront;
-    DcMotor motorLeftBack;
-
-    public RobotDrive8481
-    {
-
-    }
+    DcMotorController.DeviceMode Left_Drive;
+    DcMotorController.DeviceMode Right_Drive;
+    DcMotor RightFront;
+    DcMotor RightBack;
+    DcMotor LeftFront;
+    DcMotor LeftBack;
+    int x;
 
     @Override
     public void init()
     {
-        motorRightBack = hardwareMap.dcMotor.get("Right_Back");
-        motorRightFront = hardwareMap.dcMotor.get("Right_Front");
-        motorLeftBack = hardwareMap.dcMotor.get("Left_Back");
-        motorLeftFront = hardwareMap.dcMotor.get("Left_Front");
+        System.out.println("Robot Drive 8481");
+        RightBack = hardwareMap.dcMotor.get("Right_Back");
+        RightFront = hardwareMap.dcMotor.get("Right_Front");
+        LeftBack = hardwareMap.dcMotor.get("Left_Back");
+        LeftFront = hardwareMap.dcMotor.get("Left_Front");
     }
 
     @Override
     public void loop()
     {
+        float right = -gamepad1.right_stick_y;
+        float left = -gamepad1.left_stick_y;
 
+        right = Range.clip(right, -1, 1);
+        left = Range.clip(left, -1, 1);
+
+        RightFront.setPower(right);
+        RightBack.setPower(right);
+        LeftFront.setPower(left);
+        LeftBack.setPower(left);
+
+        System.out.println("right power is " + right);
+        System.out.println("left power is " + left);
+
+        telemetry.addData("left pwr", String.format("%.2f", left));
+        telemetry.addData("right pwr", String.format("%.2f", right));
     }
 
 
