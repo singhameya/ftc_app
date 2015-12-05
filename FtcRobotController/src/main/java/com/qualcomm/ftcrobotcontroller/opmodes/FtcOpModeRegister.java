@@ -57,6 +57,7 @@ public class FtcOpModeRegister implements OpModeRegister {
 
     manager.register("TEST", Drive_Test.class);
     manager.register("8481Drive", RobotDrive8481.class);
+    manager.register("Auton8481",Auto8481.class);
     //manager.register("K9TeleOp", K9TeleOp.class);
     //manager.register ("PushBotAuto", PushBotAuto.class);
     //manager.register ("PushBotManual", PushBotManual.class);
