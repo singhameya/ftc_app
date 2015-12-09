@@ -4,9 +4,9 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 /**
- * Created by Ameya on 11/27/15.
+ * Created by Ameya on 12/5/15.
  */
-public class Auto8481 extends LinearOpMode {
+public class Auto8481_2 extends LinearOpMode{
 
     DcMotor RightFront;
     DcMotor RightBack;
@@ -24,19 +24,19 @@ public class Auto8481 extends LinearOpMode {
         waitForStart();
 
         while (opModeIsActive()) {
-            RightBack.setPower(-.1);
-            RightFront.setPower(-.1);
+            RightBack.setPower(-1);
+            RightFront.setPower(-1);
             LeftBack.setPower(1);
             LeftFront.setPower(1);
 
-            sleep(2350);
+            sleep(2000);
 
             RightBack.setPower(0);
             RightFront.setPower(0);
             LeftBack.setPower(1);
             LeftFront.setPower(1);
 
-            sleep(1250);
+            sleep(600);
 
             RightBack.setPower(-1);
             RightFront.setPower(-1);

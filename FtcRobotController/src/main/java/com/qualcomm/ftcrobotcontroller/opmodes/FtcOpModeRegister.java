@@ -58,6 +58,7 @@ public class FtcOpModeRegister implements OpModeRegister {
     manager.register("TEST", Drive_Test.class);
     manager.register("8481Drive", RobotDrive8481.class);
     manager.register("Auton8481",Auto8481.class);
+    manager.register("Auto8481_2", Auto8481_2.class);
     //manager.register("K9TeleOp", K9TeleOp.class);
     //manager.register ("PushBotAuto", PushBotAuto.class);
     //manager.register ("PushBotManual", PushBotManual.class);
@@ -66,9 +67,7 @@ public class FtcOpModeRegister implements OpModeRegister {
     //manager.register("K9TeleOp", K9TeleOp.class);
     //manager.register ("PushBotAuto", PushBotAuto.class);
     //manager.register ("PushBotManual", PushBotManual.class);
-
-    manager.register("NullOp", NullOp.class);
-
+    //manager.register("NullOp", NullOp.class);
     // manager.register("MatrixK9TeleOp", MatrixK9TeleOp.class);
     // manager.register("K9TeleOp", K9TeleOp.class);
     // manager.register("K9Line", K9Line.class);
@@ -88,7 +87,7 @@ public class FtcOpModeRegister implements OpModeRegister {
     //manager.register("I2cAddressChangeExample", LinearI2cAddressChange.class);
 
 
-    manager.register("NxtTeleOp", NxtTeleOp.class);
+    //manager.register("NxtTeleOp", NxtTeleOp.class);
 
     //manager.register("NxtTeleOp", NxtTeleOp.class);
     //manager.register("LinearK9TeleOp", LinearK9TeleOp.class);
