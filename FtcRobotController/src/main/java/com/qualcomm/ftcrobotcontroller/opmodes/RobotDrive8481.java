@@ -22,7 +22,6 @@ public class RobotDrive8481 extends OpMode
     Servo Movement2;
     Servo Movement3;
     Servo Stopper;
-    double stopper;
 
     @Override
     public void init()
