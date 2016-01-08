@@ -9,17 +9,14 @@
         <Motor name="Left_Front" port="2" />
     </MotorController>
     <LegacyModuleController name="Legacy Module" serialNumber="AL00VDU8">
-        <MotorController name="Slide_Motors" port="0">
-            <Motor name="Linear_Slides" port="1" />
-            <Motor name="Slide_Angle" port="2" />
+        <MotorController name="Hook Motors" port="0">
+            <Motor name="Winch" port="1" />
+            <Motor name="Catapult" port="2" />
         </MotorController>
-        <MotorController name="Intake" port="1">
-            <Motor name="Intake_Motor" port="1" />
-        </MotorController>
-        <ServoController name="Servos" port="2">
-            <Servo name="Movement_1" port="1" />
-            <Servo name="Movement_2" port="2" />
-            <Servo name="Movement_3" port="3" />
+        <ServoController name="Servos" port="1">
+            <Servo name="Dropper" port="1" />
+            <Servo name="lSide" port="2" />
+            <Servo name="rSide" port="3" />
         </ServoController>
     </LegacyModuleController>
 </Robot>
