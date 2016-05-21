@@ -55,12 +55,14 @@ public class FtcOpModeRegister implements OpModeRegister {
      * If two or more op modes are registered with the same name, the app will display an error.
      */
 
-    manager.register("TEST", Drive_Test.class);
-    manager.register("New Drive", HookTest.class);
-    manager.register("8481Drive", RobotDrive8481.class);
+    //manager.register("TEST", Drive_Test.class);
+    manager.register("8481Drive2", HookTest.class);
+    //manager.register("8481Drive", RobotDrive8481.class);
     manager.register("Auton8481",Auto8481.class);
     manager.register("Auto8481_2", Auto8481_2.class);
-    manager.register("ClimberAuto", AutoClimber.class);
+    manager.register("ClimberAutoRed", AutoClimber.class);
+    manager.register("ClimberAutoBlu", AutoClimberReverse.class);
+    //manager.register("WinchTest", WinchTest.class);
     //manager.register("K9TeleOp", K9TeleOp.class);
     //manager.register ("PushBotAuto", PushBotAuto.class);
     //manager.regizster ("PushBotManual", PushBotManual.class);

@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 /**
  * Created by Ameya on 1/2/16.
  */
-public class AutoClimber extends LinearOpMode {
+public class AutoClimberReverse extends LinearOpMode {
 
     DcMotor RightFront;
     DcMotor RightBack;
@@ -37,44 +37,44 @@ public class AutoClimber extends LinearOpMode {
 
         waitForStart();
 
-        RightBack.setPower(0);
-        RightFront.setPower(0);
+        RightBack.setPower(1);
+        RightFront.setPower(1);
         LeftBack.setPower(1);
         LeftFront.setPower(1);
 
-        sleep(1000);
+        sleep(300);
+
+        RightBack.setPower(0.5);
+        RightFront.setPower(0.7);
+        LeftBack.setPower(0);
+        LeftFront.setPower(0);
+
+        sleep(650);
 
         RightBack.setPower(0.60);
         RightFront.setPower(0.60);
         LeftBack.setPower(0.60);
         LeftFront.setPower(0.60);
 
-        sleep(2750);
+        sleep(2450);
 
-
-        RightBack.setPower(1);
-        RightFront.setPower(1);
+        RightBack.setPower(0.7);
+        RightFront.setPower(0.7);
         LeftBack.setPower(0);
         LeftFront.setPower(0);
 
-        sleep(700);
-
-        RightBack.setPower(1);
-        RightFront.setPower(1);
-        LeftBack.setPower(1);
-        LeftFront.setPower(1);
-
-        sleep(250);
+        sleep(2075);
 
         RightBack.setPower(0);
         RightFront.setPower(0);
         LeftBack.setPower(0);
         LeftFront.setPower(0);
-        Dropper.setPosition(0.4);
+
+        Dropper.setPosition(0.2);
 
         sleep(3000);
 
-        Dropper.setPosition(0.6);
+        Dropper.setPosition(0.7);
 
         sleep(3000);
 

@@ -15,6 +15,7 @@ public class HookTest extends OpMode {
     DcMotor LeftFront;
     DcMotor LeftBack;
     DcMotor Winch;
+    DcMotor Winch2;
     DcMotor Catapult;
     Servo Dropper;
     Servo lSide;
@@ -28,6 +29,7 @@ public class HookTest extends OpMode {
         LeftBack = hardwareMap.dcMotor.get("Left_Back");
         LeftFront = hardwareMap.dcMotor.get("Left_Front");
         Winch = hardwareMap.dcMotor.get("Winch");
+        Winch2 = hardwareMap.dcMotor.get("Winch2");
         Catapult = hardwareMap.dcMotor.get("Catapult");
         Dropper = hardwareMap.servo.get("Dropper");
         lSide = hardwareMap.servo.get("lSide");
@@ -42,10 +44,8 @@ public class HookTest extends OpMode {
     public void loop() {
         double right = gamepad1.right_stick_y;
         double left = gamepad1.left_stick_y;
-        double WinchL = gamepad1.left_trigger;
-        double WinchR = gamepad1.right_trigger;
-
-        gamepad1.
+        double WinchL = gamepad1.right_trigger;
+        double WinchR = gamepad1.left_trigger;
 
         right = Range.clip(right, -1, 1);
         left = Range.clip(left, -1 , 1);
@@ -64,45 +64,55 @@ public class HookTest extends OpMode {
 
         if (WinchL != 0){
             Winch.setPower(WinchL);
+            Winch2.setPower(-WinchL);
         }
         else if (WinchR != 0){
             Winch.setPower(-WinchR);
+            Winch2.setPower(WinchR);
         }
         else{
             Winch.setPower(0);
+            Winch2.setPower(0);
         }
 
-        if (gamepad1.left_bumper){
+        if (gamepad1.right_bumper){
             Catapult.setPower(0.5);
         }
-        else if (gamepad1.right_bumper){
+        else if (gamepad1.left_bumper){
             Catapult.setPower(-0.5);
         }
         else{
             Catapult.setPower(0);
         }
 
-        if (gamepad1.a){
+        if (gamepad1.b){
             Dropper.setPosition(0.3);
         }
-        else if (gamepad1.b){
+        else if (gamepad1.x){
             Dropper.setPosition(0.7);
         }
         else {
             Dropper.setPosition(0.5);
         }
 
-        if (gamepad1.x){
-            lSide.setPosition(0.4);
+        if (gamepad1.a){
             rSide.setPosition(0.6);
         }
         else if (gamepad1.y){
-            lSide.setPosition(0.6);
             rSide.setPosition(0.4);
         }
         else{
-            lSide.setPosition(0.5);
             rSide.setPosition(0.5);
+        }
+
+        if (gamepad1.dpad_up){
+            lSide.setPosition(0.6);
+        }
+        else if (gamepad1.dpad_down){
+            lSide.setPosition(0.4);
+        }
+        else{
+            lSide.setPosition(0.5);
         }
     }
 }
